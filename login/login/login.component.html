@@ -1,0 +1,95 @@
+<div class="waveWrapper waveAnimation">
+    <div class="waveWrapperInner bgTop">
+        <div class="wave waveTop" style="background-image: url('../../../assets/login/wave-top.png')">
+        </div>
+    </div>
+    <div class="waveWrapperInner bgMiddle">
+        <div class="wave waveMiddle" style="background-image: url('../../../assets/login/wave-mid.png')">
+        </div>
+    </div>
+    <div class="waveWrapperInner bgBottom">
+        <div class="wave waveBottom" style="background-image: url('../../../assets/login/wave-bot.png')">
+        </div>
+    </div>
+</div>
+<div class="d-flex login-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-10 offset-md-3 offset-sm-1 d-flex align-items-center vh100">
+                <div>
+                    <div class="triangle-main-invert triangle">
+                        <p><a href="javascript:void(0)">
+                            <img style="    width: 30px;
+                            height: 30px;" src="../../../assets/login/letter_i.png" alt="iPlanner" />
+
+                        </a></p>
+                    </div>
+                    <div class="parallelogram">
+                        <div class="login-content">
+                            <div class="row">
+                                <div class="col-12 d-inline-flex justify-content-start">
+                                    <div>
+                                        <img style="    width: 30px;
+                                    height: 30px;" src="../../../assets/login/letter_i.png" alt="iPlanner" />
+
+                                    </div>
+                                    <div>
+                                        <img style="width: 180px;
+                                    height: 80px;
+                                    margin-top: -20px;
+                                    margin-left: -10px;" src="../../../assets/login/login-icon.svg" alt="iPlanner">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <form name="login" (ngSubmit)="onLoginSubmit()" novalidate autocomplete="off"
+                                [formGroup]="loginForm">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text login-text-icon" id="mobile">
+                                                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" formControlName="mobile" class="form-control m-0"
+                                                placeholder="Mobile" aria-label="mobile" aria-describedby="mobile" />
+                                            <!-- <small id="MobileHelp" class="form-text text-muted">Enter 10 digit Mobile Number (i.e 9876543219)</small> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text login-text-icon" id="password">
+                                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" formControlName="password" class="form-control m-0"
+                                                placeholder="Password" aria-label="password"
+                                                aria-describedby="password" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 p-2">
+                                        <button type="submit" class="pull-right login-btn btn btn-outline-primary">
+                                            <i class="fa fa-2x signin-icon fa-sign-in" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="triangle-main triangle">
+                        <p><a href="javascript:void(0)">Register&nbsp;&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a></p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
