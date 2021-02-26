@@ -1,0 +1,89 @@
+<div class="waveWrapper waveAnimation">
+    <div class="waveWrapperInner bgTop">
+        <div class="wave waveTop" style="background-image: url('../../../assets/login/wave-top.png')">
+        </div>
+    </div>
+    <div class="waveWrapperInner bgMiddle">
+        <div class="wave waveMiddle" style="background-image: url('../../../assets/login/wave-mid.png')">
+        </div>
+    </div>
+    <div class="waveWrapperInner bgBottom">
+        <div class="wave waveBottom" style="background-image: url('../../../assets/login/wave-bot.png')">
+        </div>
+    </div>
+</div>
+<div class="login-section">
+    <section>
+        <div class="box">
+            <div class="square" style="--i:0;"></div>
+            <div class="square" style="--i:1;"></div>
+            <div class="square" style="--i:2;"></div>
+            <div class="square" style="--i:3;"></div>
+            <div class="square" style="--i:4;"></div>
+            <div class="square" style="--i:5;"></div>
+            <div class="login-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="login-content p-2">
+                            <div class="row">
+                                <div class="col-12 d-inline-flex justify-content-center">
+                                    <div>
+                                        <img style="width: 30px;
+                                    height: 30px;" src="../../../assets/login/letter_i.png" alt="iPlanner" />
+
+                                    </div>
+                                    <div>
+                                        <img style="width: 200px;
+                                        height: 80px;
+                                        margin-top: -30px;
+                                        margin-left: -10px;" src="../../../assets/login/login-icon.svg" alt="iPlanner">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <form name="login" (ngSubmit)="onLoginSubmit()" novalidate autocomplete="off"
+                                [formGroup]="loginForm">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text login-text-icon" id="mobile">
+                                                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" formControlName="mobile" class="form-control m-0"
+                                                placeholder="Mobile" aria-label="mobile" aria-describedby="mobile" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text login-text-icon" id="password">
+                                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                            <input type="text" formControlName="password" class="form-control m-0"
+                                                placeholder="Password" aria-label="password"
+                                                aria-describedby="password" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 p-2 d-flex justify-content-center">
+                                        <button type="submit" class="login-btn btn btn-outline-primary">
+                                            <i class="fa fa-2x signin-icon fa-sign-in" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+</div>

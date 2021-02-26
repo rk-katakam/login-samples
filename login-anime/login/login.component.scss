@@ -1,0 +1,276 @@
+@import '../../@theme/styles/variables.scss';
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  /* margin: auto; */
+  height: 100vh;
+  z-index: 0;
+  opacity: .65;
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1px;
+  background-image: -webkit-linear-gradient(to top, $brand-primary 30%, $brand-secondary 60%, $bg-primary 90%);
+  background-image: -o-linear-gradient(to top, $brand-primary 30%, $brand-secondary 60%, $bg-primary 90%);
+  background-image: -moz-linear-gradient(to top, $brand-primary 30%, $brand-secondary 60%, $bg-primary 90%);
+  background-image: linear-gradient(to top, $brand-primary 30%, $brand-secondary 60%, $bg-primary 90%);
+}
+
+.bgTop {
+  z-index: 15;
+  opacity: .5;
+}
+
+.bgMiddle {
+  z-index: 10;
+  opacity: .75;
+}
+
+.bgBottom {
+  z-index: 5;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.waveTop {
+  background-size: 50% 100px;
+}
+
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+  -webkit-animation: move-wave 3s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.waveMiddle {
+  background-size: 50% 120px;
+}
+
+.waveAnimation .waveMiddle {
+  animation: move_wave 10s linear infinite;
+}
+
+.waveBottom {
+  background-size: 50% 100px;
+}
+
+.waveAnimation .waveBottom {
+  animation: move_wave 15s linear infinite;
+}
+/***********BG*******************/
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: -webkit-linear-gradient(-45deg, $brand-primary,rgba(231, 60, 126, 0.2), rgba(35, 166, 213, 0.2));
+  background: -moz-linear-gradient(-45deg, $brand-primary,rgba(231, 60, 126, 0.2), rgba(35, 166, 213, 0.2));
+  background: linear-gradient(-45deg, $brand-primary,rgba(231, 60, 126, 0.2), rgba(35, 166, 213, 0.2));
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+      }
+    50% {
+      background-position: 100% 50%;
+      }
+    100% {
+      background-position: 0% 50%;
+      }
+}
+
+.box {
+  position: relative;
+
+  .square {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    animation: square 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+  }
+  
+  @keyframes square {
+    0%,100% {
+      transform: translateY(-20px);
+    }
+    
+    50% {
+      transform: translateY(20px);
+    }
+  }
+  
+  .square:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: -15px;
+    right: -45px;
+  }
+  
+  .square:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    top: 105px;
+    left: -125px;
+    z-index: 2;
+  }
+  
+  .square:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    bottom: 85px;
+    right: -45px;
+    z-index: 2;
+  }
+  
+  .square:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    bottom: 35px;
+    left: -95px;
+  }
+  
+  .square:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    top: -15px;
+    left: -25px;
+  }
+  
+  .square:nth-child(6) {
+    width: 85px;
+    height: 85px;
+    top: 165px;
+    right: -155px;
+    z-index: 2;
+  }
+}
+
+.login-container {
+  position: relative;
+  padding: 1.2em;
+  max-width: 300px;
+  min-height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.login-container::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+  background: linear-gradient( to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 2%
+  );
+}
+
+
+/**********LOGIN**********/
+.login-section {
+  background-attachment: fixed;
+  background-image: url('../../../assets/login/login-bg.jpg');
+  height: 100vh;
+  z-index: 1;
+  background-position: center center;
+}
+
+.custom-border {
+  word-break: break-word;
+  border: 0 solid;
+  border-image-slice: 1;
+  border-left-width: 5px;
+  border-radius: 0 0 50px 50px;
+  border-image-source: -webkit-linear-gradient(to bottom, $bg-primary 0%, $bg-primary 20%, #e74c3c 20%, #e74c3c 40%, $brand-primary 40%, $brand-primary 60%, $brand-secondary 60%, $brand-secondary 80%,$bg-secondary 80%,$bg-secondary 100%);
+  border-image-source: -moz-linear-gradient(to bottom, $bg-primary 0%, $bg-primary 20%, #e74c3c 20%, #e74c3c 40%, $brand-primary 40%, $brand-primary 60%, $brand-secondary 60%, $brand-secondary 80%,$bg-secondary 80%,$bg-secondary 100%);
+  border-image-source: linear-gradient(to bottom, $bg-primary 0%, $bg-primary 20%, #e74c3c 20%, #e74c3c 40%, $brand-primary 40%, $brand-primary 60%, $brand-secondary 60%, $brand-secondary 80%,$bg-secondary 80%,$bg-secondary 100%);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: $white;
+    transform: skew(0deg,25deg);
+    border-radius: 12px;
+  }
+}
+
+.login-content {
+  z-index: 1;
+  color: $default-text;
+}
+
+.login-btn {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: $white;
+  text-transform: capitalize;
+  &.btn-outline-primary{
+    border-color: $bg-primary;
+    &:hover{
+      background-color: $bg-secondary;
+    }
+  }
+
+  i.signin-icon {
+    font-size: 1.75em;
+  }
+}
+
+.login-text-icon {
+  width: 40px;
+  height: 38px;
+  background-color: $bg-secondary;
+  color: $white;
+}
